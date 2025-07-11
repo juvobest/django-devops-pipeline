@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+venv/
+devops_venv/
+*.sqlite3
+*.log
+*.pem
+nohup.out
+.git
