@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Django
+*.sqlite3
+*.log
+
+# Environments
+.env
+venv/
+env/
+*.egg-info/
+
+# Docker
+*.pid
+*.tar
+
+# OS or Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
