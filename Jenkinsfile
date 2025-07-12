@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    environment {
-        DOCKER_IMAGE = 'juvobest/django-devops-app:latest'
-    }
-
     stages {
         stage('Clone Repo') {
             steps {
@@ -15,7 +11,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    sh 'docker build -t $DOCKER_IMAGE .'
+                    sh 'docker build -t juvobest/django-devops-app:latest .'
                 }
             }
         }
@@ -25,12 +21,10 @@ pipeline {
                 script {
                     withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                         sh 'echo $PASSWORD | docker login -u $USERNAME --password-stdin'
-                        sh 'docker push $DOCKER_IMAGE'
+                        sh 'docker push juvobest/django-devops-app:latest'
                     }
                 }
             }
         }
-
-        
     }
 }
