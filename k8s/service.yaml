@@ -8,6 +8,6 @@ spec:
     app: django
   ports:
     - protocol: TCP
-      port: 8000
-      targetPort: 8000
-  type: NodePort
+      port: 8090       # Expose 8090
+      targetPort: 8090 # Match container port
+  type: LoadBalancer

@@ -18,6 +18,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('hello.urls')),  
+    path('', include('hello.urls')),  # ✅ include the hello app routes
 ]
-

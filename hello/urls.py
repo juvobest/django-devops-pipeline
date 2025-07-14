@@ -1,6 +1,11 @@
+# hello/urls.py
+
 from django.urls import path
-from . import views
+from django.http import HttpResponse
+
+def hello_view(request):
+    return HttpResponse("Hello from Django on Kubernetes!")
 
 urlpatterns = [
-    path('', views.home, name='home'),
+    path('hello/', hello_view),
 ]
